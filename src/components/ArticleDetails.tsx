@@ -28,7 +28,7 @@ const ArticleDetails = () => {
 
   if (!article) {
     return (
-      <div>
+      <div className="text-center mt-5">
         <Spinner animation="border" role="status">
           <span className="visually-hidden">Loading...</span>
         </Spinner>
@@ -38,21 +38,23 @@ const ArticleDetails = () => {
 
   return (
     <Container fluid>
-      <Row>
-        <Col>
-          <Card>
-            <Card.Img variant="top" src={article.image_url} />
-            <Card.Body>
-              <Card.Title>{article.title}</Card.Title>
-              <Card.Text>{article.summary}</Card.Text>
-              <a href={article.url} className="nav-link d-inline-block">
-                Articolo 🎆
-              </a>
-              <a href={article.news_site} className="nav-link d-inline-block">
-                💻 Sito
-              </a>
-            </Card.Body>
-          </Card>
+      <Row className="justify-content-center">
+        <Col sm={8}>
+          <Card.Title className="my-3 text-center">{article.title}</Card.Title>
+          <Card.Img variant="top" src={article.image_url} className="w-75 ms-5 mb-5" />
+          <Card.Body>
+            <Card.Text>{article.summary}</Card.Text>
+          </Card.Body>
+
+          <a href={article.url} className="nav-link  my-3">
+            🎆 Clicca per l' articolo completo
+          </a>
+          <a href={article.news_site} className="nav-link ">
+            💻 Vai al sito
+          </a>
+          <a href="/" className="nav-link mt-3">
+            🏡 home
+          </a>
         </Col>
       </Row>
     </Container>

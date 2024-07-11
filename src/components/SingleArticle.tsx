@@ -21,15 +21,8 @@ const SingleArticle = ({ article }: SingleNewsProps) => {
           <Card.Title className="text-truncate">{article.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
           <Card.Text className="line-truncate-3">{article.summary}</Card.Text>
+          <Card.Subtitle className="mb-2 text-muted">Clicca per continuare a leggere</Card.Subtitle>
         </Card.Body>
-        <div className="d-flex justify-content-between">
-          <a href={article.url} className="nav-link d-inline-block">
-            articolo🎆
-          </a>
-          <a href={article.news_site} className="nav-link  d-inline-block ">
-            💻 sito
-          </a>
-        </div>
       </Card>
     </Col>
   );
