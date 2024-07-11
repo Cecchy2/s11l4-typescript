@@ -1,4 +1,4 @@
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row, Spinner } from "react-bootstrap";
 import { INews } from "../interfaces/INews";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -27,7 +27,13 @@ const ArticleDetails = () => {
   }, [id]);
 
   if (!article) {
-    return <div>Loading...</div>;
+    return (
+      <div>
+        <Spinner animation="border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </Spinner>
+      </div>
+    );
   }
 
   return (

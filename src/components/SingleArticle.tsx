@@ -18,9 +18,9 @@ const SingleArticle = ({ article }: SingleNewsProps) => {
       <Card onClick={handleCardClick} style={{ cursor: "pointer" }}>
         <Card.Img variant="top" src={article.image_url} />
         <Card.Body>
-          <Card.Title>{article.title}</Card.Title>
+          <Card.Title className="text-truncate">{article.title}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
-          <Card.Text>{article.summary}</Card.Text>
+          <Card.Text className="line-truncate-3">{article.summary}</Card.Text>
         </Card.Body>
         <div className="d-flex justify-content-between">
           <a href={article.url} className="nav-link d-inline-block">
